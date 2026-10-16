@@ -1,4 +1,4 @@
-# Crystal Kizor — personal brand site
+# Crystal Kizor personal brand site
 
 Single-page editorial site for Crystal Kizor, built from the Stage 1 assessment brief.
 
