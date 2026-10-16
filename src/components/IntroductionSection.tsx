@@ -11,7 +11,7 @@ export function IntroductionSection() {
           </h2>
           <figure className="img-zoom mt-10 aspect-[4/5] bg-ivory-deep">
             <img
-              src="/images/portrait-graduation.jpg"
+              src="/images/public/images/Poised in a Warm Design Studio.png"
               alt="Crystal Kizor in academic dress standing before a modernist brick façade."
               width={1440}
               height={1800}
