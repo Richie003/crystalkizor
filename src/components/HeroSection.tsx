@@ -66,7 +66,7 @@ export function HeroSection() {
           >
             <figure className="img-zoom col-span-1 row-span-2 min-h-[380px] bg-forest md:min-h-[460px] lg:min-h-0">
               <img
-                src="/images/portrait-cafe.jpg"
+                src="/images/Confident Designer in Studio Workspace.png"
                 alt="Crystal Kizor, seated, looking toward the camera."
                 className="object-[center_22%]"
                 width={1440}
@@ -76,7 +76,7 @@ export function HeroSection() {
             </figure>
             <figure className="img-zoom hidden min-h-[240px] bg-charcoal sm:block">
               <img
-                src="/images/coka-hero.jpeg"
+                src="/images/2.jpeg"
                 alt="Studio COKA concept for a climate-responsive civic building with sweeping roofs."
                 width={1200}
                 height={1200}
