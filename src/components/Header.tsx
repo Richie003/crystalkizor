@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { navItems } from "../data/content";
+import { MarqueeBar } from "./MarqueeBar";
 import { MobileNavigation } from "./MobileNavigation";
 
 export function Header() {
@@ -22,6 +23,7 @@ export function Header() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
+        <MarqueeBar />
         <div className="site-gutter flex h-16 items-center justify-between md:h-[4.5rem]">
           <a href="#top" className="font-serif text-[1.35rem] tracking-tight text-charcoal">
             Crystal Kizor

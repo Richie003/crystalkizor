@@ -1,19 +1,26 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
 import { IdeasSection } from "./components/IdeasSection";
+import { IntroOverlay } from "./components/IntroOverlay";
 import { IntroductionSection } from "./components/IntroductionSection";
 import { SpeakingSection } from "./components/SpeakingSection";
 import { VenturesSection } from "./components/VenturesSection";
+import { IntroReadyContext, prefersReducedMotion } from "./lib/motion";
 
 export default function App() {
   const [progress, setProgress] = useState(0);
+  const [introReady, setIntroReady] = useState(() => prefersReducedMotion());
+
+  const finishIntro = useCallback(() => setIntroReady(true), []);
 
   useEffect(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
+    if (prefersReducedMotion()) {
+      setIntroReady(true);
+      return;
+    }
 
     const onScroll = () => {
       const height = document.documentElement.scrollHeight - window.innerHeight;
@@ -25,10 +32,11 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <IntroReadyContext.Provider value={introReady}>
+      {!introReady ? <IntroOverlay onComplete={finishIntro} /> : null}
       <div
         className="progress"
-        style={{ transform: `scaleX(${progress})` }}
+        style={{ transform: `scaleX(${introReady ? progress : 0})` }}
         aria-hidden="true"
       />
       <Header />
@@ -41,6 +49,6 @@ export default function App() {
         <ContactSection />
       </main>
       <Footer />
-    </>
+    </IntroReadyContext.Provider>
   );
 }

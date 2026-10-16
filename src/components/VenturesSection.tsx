@@ -35,24 +35,28 @@ export function VenturesSection() {
       </div>
 
       <div className="site-gutter grid gap-4 py-4 lg:grid-cols-2">
-        <figure className="img-zoom aspect-[4/3] bg-ivory-deep">
-          <img
-            src="/images/coka-p1-2.jpeg"
-            alt="Interior of Studio COKA’s International Event Centre concept, with undulating timber ceilings and living walls."
-            width={1400}
-            height={1050}
-            loading="lazy"
-          />
-        </figure>
-        <figure className="img-zoom aspect-[4/3] bg-ivory-deep">
-          <img
-            src="/images/coka-p2-1.jpeg"
-            alt="Garden Home concept: a brick and glass house opening onto water and dense trees."
-            width={1400}
-            height={1400}
-            loading="lazy"
-          />
-        </figure>
+        <Reveal>
+          <figure className="img-zoom aspect-[4/3] bg-ivory-deep">
+            <img
+              src="/images/coka-p1-2.jpeg"
+              alt="Interior of Studio COKA’s International Event Centre concept, with undulating timber ceilings and living walls."
+              width={1400}
+              height={1050}
+              loading="lazy"
+            />
+          </figure>
+        </Reveal>
+        <Reveal delayMs={80}>
+          <figure className="img-zoom aspect-[4/3] bg-ivory-deep">
+            <img
+              src="/images/coka-p2-1.jpeg"
+              alt="Garden Home concept: a brick and glass house opening onto water and dense trees."
+              width={1400}
+              height={1400}
+              loading="lazy"
+            />
+          </figure>
+        </Reveal>
       </div>
 
       <div className="site-gutter">
